@@ -5,17 +5,17 @@ export class SaveGame {
 
   constructor(input: File) {
     this.reader.readAsText(input);
-    this.reader.onloadend = this.onloadend;
+    this.reader.onloadend = (event: Event): void => {
+      this.onloadend(event);
+    };
   }
 
-  public transform(remove?: string, add?: string): void {
-    if (remove && add) {
-      this.output = this.file;
-    }
+  public transform(remove: string): void {
+    this.output = this.file.replace(new RegExp(`<farmhand>.*<name>${remove}</name>.*</farmhand>`, 'g'), '');
   }
 
-  public download(): string {
-    return this.output;
+  public download(): Blob {
+    return new Blob([this.output], { type: 'application/octet-binary' });
   }
 
   private onloadend(event: Event): void {
