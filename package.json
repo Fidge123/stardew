@@ -2,17 +2,18 @@
   "name": "sv_manipulate",
   "version": "1.0.0",
   "description": "Add/rename/remove players from a stardew valley save game",
-  "main": "dist/transform.js",
+  "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "webpack",
     "lint": "tslint"
   },
   "author": "Florian Richter",
   "license": "MIT",
-  "dependencies": {
-    "typescript": "^2.8.3"
-  },
   "devDependencies": {
-    "tslint": "^5.10.0"
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "tslint": "^5.10.0",
+    "webpack": "^4.10.1",
+    "webpack-cli": "^2.1.4"
   }
 }
