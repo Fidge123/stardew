@@ -2,8 +2,10 @@
   "compilerOptions": {
     "target": "ES2017",
     "module": "commonjs",
-    "outFile": "transform.js",
+    "outDir": "./dist",
     "removeComments": true,
+    "sourceMap": true,
+    "sourceRoot": "./src",
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -15,6 +17,6 @@
     "noImplicitReturns": true
   },
   "include": [
-    "transform.ts"
+    "src/*.ts"
   ]
 }
