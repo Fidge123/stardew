@@ -8,9 +8,6 @@ before_script:
 - npm install
 script:
 - npm run build
-after_success:
-- npm --prefix ./functions install ./functions
-- firebase deploy --token $TOKEN
 deploy:
   provider: pages
   skip-cleanup: true
