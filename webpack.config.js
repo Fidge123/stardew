@@ -15,7 +15,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js']
   },
-  mode: 'development',
+  mode: 'production',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')

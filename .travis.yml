@@ -8,6 +8,7 @@ before_script:
 - npm install
 script:
 - npm run build
+- rm !(dist|index.html|.git)
 deploy:
   provider: pages
   skip-cleanup: true
