@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- node
+branches:
+  only:
+  - master
+before_script:
+- npm install
+script:
+- npm run build
+after_success:
+- npm --prefix ./functions install ./functions
+- firebase deploy --token $TOKEN
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
